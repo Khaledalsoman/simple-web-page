@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>grade-demo</title>
+    <script>
+        let studentCount = 0;
+        while (true) {
+            studentCount = window.prompt('How many students?');
+            castStudentCount = parseInt(studentCount)
+            if (castStudentCount > 0) {
+                document.writeln('number of student is ' + castStudentCount)
+                break;
+            }
+            else {
+                continue
+            }
+        }
+        document.writeln('<form onsubmit="computeResult(); return false">')
+        let studentname;
+        let studentgrade;
+        for (let i = 1; i <= castStudentCount; i++) {
+            document.writeln('<br> student name <input type="text" id="name' + i + '">' +
+                ' grade1 <input type="number" min="0" max="100" id="g1_' + i + '">' +
+                ' grade2 <input type="number" min="0" max="100" id="g2_' + i + '">' +
+                ' grade3 <input type="number" min="0" max="100" id="g3_' + i + '">');
+        }
+        document.writeln('<br><input type="submit" value="Submit Grades">');
+        document.writeln('</form>');
+        function computeResult() {
+            let output = ""
+            let result;
+            for (let i = 1; i <= castStudentCount; i++) {
+                let name = document.getElementById('name' + i).value;
+                let g1 = parseInt(document.getElementById('g1_' + i).value);
+                let g2 = parseInt(document.getElementById('g2_' + i).value);
+                let g3 = parseInt(document.getElementById('g3_' + i).value);
+                let avg = (g1 + g2 + g3) / 3;
+                if (avg >= 50) {
+                    result = "Pass";
+                } else {
+                    result = "Fail";
+                }
+                output += '<br>' + name + ' average is ' + avg +" "+  result;
+            }
+            document.open();
+            document.writeln(output);
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
