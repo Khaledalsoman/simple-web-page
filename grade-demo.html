@@ -30,6 +30,7 @@
         function computeResult() {
             let output = ""
             let result;
+            output+="<table border='1'> <tr><th>Name</th><th>Average</th><th>Result</th></tr>"
             for (let i = 1; i <= castStudentCount; i++) {
                 let name = document.getElementById('name' + i).value;
                 let g1 = parseInt(document.getElementById('g1_' + i).value);
@@ -41,9 +42,10 @@
                 } else {
                     result = "Fail";
                 }
-                output += '<br>' + name + ' average is ' + avg +" "+  result;
+                
+                output+='<tr>'+'<td>'+name+'<td>'+avg+'<td>'+result
             }
-            document.open();
+            document.writeln("</table>")
             document.writeln(output);
         }
 
