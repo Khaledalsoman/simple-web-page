@@ -1,0 +1,65 @@
+       
+/* Give each main section a bordered panel look */
+section {
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  margin: 0.75rem 0;
+  background: #fafafa;
+}
+
+/* Keep controls neat */
+button {
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Make all images visually consistent */
+img {
+  border-radius: 0.25rem;
+}
+
+/* Thumbnails (small images inside sections) */
+section img {
+  cursor: pointer;
+  margin-right: 0.35rem;
+  border-radius: 0.25rem;
+}
+
+/* But preserve larger display image size if explicitly set */
+section figure img[width],
+section figure img[height] {
+  cursor: default;
+}
+
+/* Flexible layout for elements placed side by side */
+section div,
+section figure {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0.25rem 0.5rem;
+}
+
+/* Caption under images */
+figcaption {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Small italic text for live feedback or hints */
+p[aria-live],
+span[aria-live] {
+  min-height: 1.25rem;
+  color: #444;
+  font-style: italic;
+}
+
+/* List spacing for dynamically added notes */
+ul, ol {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+li {
+  margin-left: 1rem;
+}

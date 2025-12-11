@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<style>
+  img {
+    height: 150px;
+    width: 150px;
+  }
+</style>
+<script>
+  function resize() {
+    if (document.getElementById("img").style.width == "250px" &&
+      document.getElementById("img").style.height == "250px") {
+      document.getElementById("img").style.width = "150px";
+      document.getElementById("img").style.height = "150px";
+    }
+    else {
+      document.getElementById("img").style.width = "250px";
+      document.getElementById("img").style.height = "250px";
+    }
+  }
+  function reset_img() {
+    document.getElementById("img").style.width = "150px";
+    document.getElementById("img").style.height = "150px";
+    document.getElementById("img").src =
+      "https://upload.wikimedia.org/wikipedia/en/5/5f/King_Abdulaziz_University_logo.png";
+  }
+  function disable_button() {
+    document.getElementById("myButton").disabled = true;
+  }
+  function dynamic_link() {
+    if (document.getElementById("link").value == "link1") {
+      document.getElementById("dynamic").innerHTML = "<a href=''>link1</a>";;
+    }
+    else if (document.getElementById("link").value == "link2") {
+      document.getElementById("dynamic").innerHTML = "<a href=''>link2</a>";;
+
+    }
+    else if (document.getElementById("link").value == "link3") {
+      document.getElementById("dynamic").innerHTML = "<a href=''>link3</a>";;
+
+    }
+    else if (document.getElementById("link").value == "link4") {
+      document.getElementById("dynamic").innerHTML = "<a href=''>link4</a>";;
+
+    }
+  }
+
+
+
+</script>
+
+
+<head>
+  <title>gallery</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <section>
+    <h1> interactive image</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/en/5/5f/King_Abdulaziz_University_logo.png" alt="kau" id="img">
+    <p>Click thumbnails to swap the image, or use the buttons.</p>
+    <form onreset="reset_img()">
+      <input type="button" id="myButton" value="Disable This Button" onclick="disable_button()">
+      <input type="button" value="Resize Image" onclick="resize()">
+      <input type="button" value="Change Imag" onclick="change()">
+      <input type="reset" value="Reset">
+      <img src="https://upload.wikimedia.org/wikipedia/en/5/5f/King_Abdulaziz_University_logo.png" alt="kau">
+      <img
+        src="https://play-lh.googleusercontent.com/ZEkUaY2lUc18X3gK50pVnqZqtsqIfOTxopsQNuvYeeyWvdK_QUJOqDMW89DORocgahg=w240-h480-rw"
+        alt="kau">
+    </form>
+  </section>
+  <section>
+    <h1>dynamic link</h1>
+    <form>
+      <p id="dynamic">...</p>
+      <span>choose a site</span>
+      <select id="link" onclick="dynamic_link()">
+        <option value="link1" id="link1">link1</option>
+        <option value="link2" id="link2">link2</option>
+        <option value="link3" id="link3">link3</option>
+        <option value="link4" id="link4">link4</option>
+      </select>
+    </form>
+  </section>
+  <section>
+    <h1>Add Notes (Append Child)</h1>
+
+    <button>Add Note</button>
+    <button>Add Custom Note (prompt)</button>
+    <button>Clear Notes</button>
+  </section>
+  <a href="index.html">back to index</a>
+</body>
+
+</html>
