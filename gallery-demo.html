@@ -21,8 +21,6 @@
   function reset_img() {
     document.getElementById("img").style.width = "150px";
     document.getElementById("img").style.height = "150px";
-    document.getElementById("img").src =
-      "https://upload.wikimedia.org/wikipedia/en/5/5f/King_Abdulaziz_University_logo.png";
   }
   function disable_button() {
     document.getElementById("myButton").disabled = true;
@@ -64,7 +62,7 @@
     <form onreset="reset_img()">
       <input type="button" id="myButton" value="Disable This Button" onclick="disable_button()">
       <input type="button" value="Resize Image" onclick="resize()">
-      <input type="button" value="Change Imag" onclick="change()">
+      <input type="button" value="Change Imag">
       <input type="reset" value="Reset">
       <img src="https://upload.wikimedia.org/wikipedia/en/5/5f/King_Abdulaziz_University_logo.png" alt="kau">
       <img

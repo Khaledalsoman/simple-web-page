@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="lab05_style.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        .darkmode{
+            background-color: black;
+        color: aliceblue;
+        }
+        .lightmode{
+            background-color: aliceblue;
+            color: black;
+            
+        }
+    </style>
+    <script>
+  function mode(){
+        if (document.body.className === "lightmode") {
+            document.body.className = "darkmode";
+        } else {
+            document.body.className = "lightmode";
+        }
+    }
+     function toRed(){
+            document.getElementById("text1").style.color = "red"
+        document.getElementById("text2").style.color = "blue"
+            document.getElementById("text4").style.color = "red"
+        document.getElementById("text3").style.color = "yellow"
+            
+        
+    }
+    </script>
+</head>
+<body class="lightmode">
+    <h1>Lab 08 — Model Answer</h1>
+    <p>This page demonstrates event registration (light/dark mode toggle), an onload timer using setInterval, and form focus/blur help
+text</p>
+<h1> A) Event Registration Models (Light/Dark Mode)</h1>
+<form id="changeMode">
+<input type="button" id="light" value="Light Mode (inline)" class="lightmode" onclick="mode()"></input>
+<br> <input type="button" id="dark" value="Dark Mode (traditional)" class="darkmode" onclick="mode()" ></input>
+</form>
+<h1>B) onload + setInterval() Timer</h1>
+<p>Seconds you have spent viewing this page so far </p>
+<h1>C) Form Using onfocus and onblur </h1>
+<form>
+    Name <input type="text" onblur="toRed()" id="text1"><br>
+    email <input type="text" name="" id="text2" onfocus="toRed()">
+    <br> Click here if you like this site <input type="checkbox" id="text4" onfocus="toRed()">
+    <br> Any comments? <br>
+    <input type="text" id="text3" > <br>
+    <input type="submit">
+    <input type="reset">
+</form>
+</body>
+</html>
